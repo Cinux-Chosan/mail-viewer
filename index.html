@@ -24,10 +24,11 @@
         console.log(evt);
         switch (data.type) {
           case "receiveMail": {
+            const email = data.data;
             list.innerHTML =
               `<li>
-                <span>From: ${data.from.text}</span>
-                <p> ${data.textAsHtml} </p>
+                <span>From: ${email.from.text}</span>
+                <p> ${email.textAsHtml} </p>
               </li>` + list.innerHTML;
             break;
           }

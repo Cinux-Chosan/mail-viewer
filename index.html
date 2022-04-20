@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      #mail-list li {
+        border: 1px dashed;
+        padding: 8px;
+      }
+
+      #mail-list li + li {
+        margin-top: 8px;
+      }
+
+      #mail-list .content {
+        padding-left: 8px;
+      }
+    </style>
   </head>
   <body>
-    12312
+    <h3>欢迎！</h3>
 
     <ol id="mail-list"></ol>
 
@@ -27,8 +42,8 @@
             const email = data.data;
             list.innerHTML =
               `<li>
-                <span>From: ${email.from.text}</span>
-                <p> ${email.textAsHtml} </p>
+                <h4>From: ${email.from.html}</h4>
+                <p class="content"> ${email.textAsHtml} </p>
               </li>` + list.innerHTML;
             break;
           }

@@ -9,7 +9,11 @@
   <body>
     12312
 
+    <ol id="mail-list"></ol>
+
     <script>
+      const list = document.getElementById("mail-list");
+
       const socket = new WebSocket(`ws://${location.host}`);
       socket.onopen = () => {
         socket.send("123123");
@@ -17,8 +21,14 @@
 
       socket.onmessage = (evt) => {
         const data = JSON.parse(evt.data);
+        console.log(evt);
         switch (data.type) {
           case "receiveMail": {
+            list.innerHTML =
+              `<li>
+                <span>From: ${data.from.text}</span>
+                <p> ${data.textAsHtml} </p>
+              </li>` + list.innerHTML;
             break;
           }
           default: {

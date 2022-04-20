@@ -17,7 +17,8 @@
       }
 
       #mail-list .content {
-        padding-left: 8px;
+        padding-left: 1em;
+        text-indent: 2em;
       }
     </style>
   </head>
@@ -30,9 +31,7 @@
       const list = document.getElementById("mail-list");
 
       const socket = new WebSocket(`ws://${location.host}`);
-      socket.onopen = () => {
-        socket.send("123123");
-      };
+      socket.onopen = () => socket.send("hello?");
 
       socket.onmessage = (evt) => {
         const data = JSON.parse(evt.data);

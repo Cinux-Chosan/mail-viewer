@@ -1,0 +1,16 @@
+{
+  "name": "mail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mailparser": "^3.4.0",
+    "@types/smtp-server": "^3.5.7",
+    "mailparser": "^3.4.0",
+    "smtp-server": "^3.10.0"
+  },
+  "dependencies": {
+    "open": "^8.4.0",
+    "ws": "^8.5.0"
+  }
+}
